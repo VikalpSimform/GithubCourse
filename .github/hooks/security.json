@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [
+      {
+        "id": "log-session-start",
+        "type": "command",
+        "command": "echo \"[$(date)] Copilot agent session started\" >> .github/hooks/agent-session.log"
+      }
+    ],
+    "preToolUse": [
+      {
+        "id": "log-tool-usage",
+        "type": "command",
+        "command": "echo \"[$(date)] Tool execution requested\" >> .github/hooks/tool-usage.log"
+      }
+    ]
+  }
+}
