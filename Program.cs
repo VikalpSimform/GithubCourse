@@ -57,6 +57,7 @@ app.MapGet("/", () => TypedResults.Ok(new { message = "Simple Users API", versio
     .WithTags("Info")
     .ExcludeFromDescription();
 
+app.MapHealthEndpoints();
 app.MapUserEndpoints();
 app.MapDayEndpoints();
 
