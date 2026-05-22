@@ -1,7 +1,7 @@
 using GithubCourse.Endpoints;
 using GithubCourse.Middleware;
 using GithubCourse.Services;
-using GithubCourse.Models.Validators;
+using GithubCourse.Validators;
 using Microsoft.OpenApi.Models;
 using FluentValidation;
 using FluentValidation.AspNetCore;
@@ -58,6 +58,7 @@ app.MapGet("/", () => TypedResults.Ok(new { message = "Simple Users API", versio
     .ExcludeFromDescription();
 
 app.MapUserEndpoints();
+app.MapDayEndpoints();
 
 app.Run();
 
