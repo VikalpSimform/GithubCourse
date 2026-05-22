@@ -1,8 +1,16 @@
 using GithubCourse.Endpoints;
 using GithubCourse.Middleware;
 using GithubCourse.Services;
+using GithubCourse.Models.Validators;
+using Microsoft.OpenApi.Models;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// after builder is created
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddValidatorsFromAssemblyContaining<CreateUserDtoValidator>();
 
 // Configure services
 builder.Services.AddEndpointsApiExplorer();
