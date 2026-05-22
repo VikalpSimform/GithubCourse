@@ -5,14 +5,14 @@
       {
         "id": "log-session-start",
         "type": "command",
-        "command": "echo \"[$(date)] Copilot agent session started\" >> .github/hooks/agent-session.log"
+        "command": "powershell -Command \"Add-Content -Path '.github/hooks/agent-session.log' -Value \\\"[$(Get-Date)] Copilot agent session started\\\"\""
       }
     ],
     "preToolUse": [
       {
         "id": "log-tool-usage",
         "type": "command",
-        "command": "echo \"[$(date)] Tool execution requested\" >> .github/hooks/tool-usage.log"
+        "command": "powershell -Command \"Add-Content -Path '.github/hooks/tool-usage.log' -Value \\\"[$(Get-Date)] Tool execution requested\\\"\""
       }
     ]
   }
